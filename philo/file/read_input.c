@@ -6,7 +6,7 @@
 /*   By: ael-azra <ael-azra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 17:09:56 by ael-azra          #+#    #+#             */
-/*   Updated: 2021/07/02 10:20:43 by ael-azra         ###   ########.fr       */
+/*   Updated: 2021/10/24 18:55:11 by ael-azra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_input	*cheack_error(int ac, char *av[], t_input **input)
 	while (i < ac)
 	{
 		strtoint(av[i], &status);
-		if (status)
+		if (status || (*input)->number_of_philo == 0)
 		{
 			free(*input);
 			return (NULL);

@@ -6,7 +6,7 @@
 /*   By: ael-azra <ael-azra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 18:35:40 by ael-azra          #+#    #+#             */
-/*   Updated: 2021/10/23 18:41:53 by ael-azra         ###   ########.fr       */
+/*   Updated: 2021/10/24 15:50:02 by ael-azra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,22 @@ typedef struct s_input
 
 typedef struct	s_shared_info
 {
-	int				philo_die;
+	int				*last_meal;
 	pthread_mutex_t	*fork_mutex;
+	int				meal_count;
 	
 }				t_shared_info;
 
 typedef	struct	s_philos
 {
 	int		philo_id;
+	int		nb_meals;
 	int		time_to_die;
 	int		time_to_eat;
+	int		eating;
 	int		time_to_sleep;
 	int		number_of_philo;
 	int		number_of_time_to_eat;
-	int		eating;
 	pthread_mutex_t	wait_mutex;
 	t_shared_info		*shared_info;
 }				t_philos;
